@@ -1,0 +1,104 @@
+#number-projects-nd {
+   font-size: 60px;
+}
+
+#total-donations-nd {
+   font-size: 60px;
+}
+
+
+
+
+.dc-chart g.row text {
+   fill: black;
+   font-size: 12px;
+}
+
+#total-projects {
+   background: #33CC99;
+   width: 200px;
+   position: relative;
+   height: 60px;
+   font-size: 29px;
+   color: white;
+   vertical-align: middle;
+   text-align: center;
+   padding-top: 12px;
+   padding-bottom: 0px;
+}
+
+#net-donations {
+   background: #33CC99;
+   width: 200px;
+   position: relative;
+   height: 60px;
+   font-size: 29px;
+   color: white;
+   vertical-align: middle;
+   text-align: center;
+   padding-top: 12px;
+   padding-bottom: 0px;
+}
+
+
+.dc-select-menu {
+   background: #33CC99;
+   width: 80%;
+   border: none;
+   position: relative;
+   height: 31px;
+   font-size: 15px;
+   color: white;
+   vertical-align: middle;
+   text-align: center;
+   padding-top: 4px;
+   padding-bottom: 0px;
+
+}
+.row-text-center{
+   color:black;
+}
+
+ /*#funding-map {*/
+    /*margin-left: -80px;*/
+
+ /*}*/
+ .third-row{
+    float:left;
+ }
+
+ .row-text-center{
+    text-align: center;
+
+ }
+ .intro_button{
+    margin-left: 160px;
+ }
+ /*#time-chart{*/
+    /*float: left;*/
+ /*}*/
+
+#donation{
+   width:700px;
+   margin-left:-50px;
+   border:2px solid red;
+}
+
+#resources{
+   float: right;
+   margin-right: 30px;
+   border:2px solid red;
+}
+#map{
+   width:700px;
+   margin-left: -65px;
+   border:2px solid red;
+}
+#four{
+   float: right;
+   margin-right: 25px;
+   border:2px solid red;
+}
+/*#five{*/
+   /*margin-left:-150px;*/
+/*}*/
