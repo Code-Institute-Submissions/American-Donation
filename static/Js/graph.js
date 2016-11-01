@@ -59,6 +59,7 @@ function makeGraphs(error, projectsJson, statesJson) {
    });
 
 
+
    var all = ndx.groupAll();
    var totalDonations = ndx.groupAll().reduceSum(function (d) {
        return d["total_donations"];
@@ -80,6 +81,7 @@ function makeGraphs(error, projectsJson, statesJson) {
    var donationsByTeacherPrefixChart = dc.pieChart("#donations-by-teacher-prefix-chart");
 
 
+
    selectField = dc.selectMenu('#menu-select')
        .dimension(stateDim)
        .group(stateGroup);
@@ -88,8 +90,8 @@ function makeGraphs(error, projectsJson, statesJson) {
    numberProjectsND
        .formatNumber(d3.format("d"))
        .valueAccessor(function (d) {
-           return d;
-       })
+
+           return d;})
        .group(all);
 
    totalDonationsND
@@ -112,6 +114,7 @@ function makeGraphs(error, projectsJson, statesJson) {
        .xAxisLabel("Year")
        .yAxis().ticks(4);
 
+
    resourceTypeChart
        .width(300)
        .height(250)
@@ -120,7 +123,7 @@ function makeGraphs(error, projectsJson, statesJson) {
        .xAxis().ticks(4);
 
    povertyLevelChart
-       .width(300)
+       .width(380)
        .height(250)
        .dimension(povertyLevelDim)
        .group(numProjectsByPovertyLevel)
@@ -139,7 +142,7 @@ function makeGraphs(error, projectsJson, statesJson) {
         var fundingStatusmap = dc.geoChoroplethChart("#funding-map");
 
         fundingStatusmap.width(700)
-            .height(330)
+            .height(340)
             .dimension(stateDim)
             .group(totalDonationsByState)
             .colors(["#E2F2FF", "#C4E4FF", "#9ED2FF", "#81C5FF", "#6BBAFF", "#51AEFF", "#36A2FF", "#1E96FF", "#0089FF", "#7C151D"])
@@ -159,7 +162,7 @@ function makeGraphs(error, projectsJson, statesJson) {
 
        donationsByTeacherPrefixChart
            // .width(750)
-           .height(220)
+           .height(250)
            .radius(90)
            .innerRadius(40)
            .transitionDuration(1500)

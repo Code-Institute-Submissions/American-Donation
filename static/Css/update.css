@@ -1,0 +1,45 @@
+.row{
+    /* display: -webkit-flex;
+   display: flex;
+   -webkit-flex-direction: row /* works with row or column */
+   flex-direction: row;
+   -webkit-align-items: center;
+   align-items: center;
+   -webkit-justify-content: center;
+   justify-content: center;
+    margin-left: 230px !important;
+    /*width:auto;*/
+    /*height:auto;*/
+    /*margin-left: 80px;*/
+}
+.main-container{
+    border:5px solid deepskyblue;
+    margin-bottom:5px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-top: -12px;
+}
+
+#donation{
+    margin-left: -100px;
+    border:1px solid blue;
+}
+#resources{
+    margin-left: 100px;
+    border:1px solid blue;
+
+}
+.chart-title{
+    margin-left: auto;
+    margin-right: auto;
+}
+#map{
+    margin-left:-100px;
+    border:1px solid blue;
+    margin-top: 10px;
+}
+#four{
+    border:1px solid blue;
+    margin-left:100px;
+    margin-top: 10px;
+}
