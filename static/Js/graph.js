@@ -42,6 +42,10 @@ function makeGraphs(error, projectsJson, statesJson) {
    var teacherPrefix = ndx.dimension(function (d) {
        return d["teacher_prefix"];
    });
+    var numDonorsDim = ndx.dimension(function (d) {
+        return d["num_donors"];
+
+    });
 
 
    //Calculate metrics
@@ -49,6 +53,7 @@ function makeGraphs(error, projectsJson, statesJson) {
    var numProjectsByResourceType = resourceTypeDim.group();
    var numProjectsByPovertyLevel = povertyLevelDim.group();
    var numProjectsByFundingStatus = fundingStatus.group();
+   var numDonors = numDonorsDim.group();
    var totalDonationsByState = stateDim.group().reduceSum(function (d) {
        return d["total_donations"];
    });
@@ -57,6 +62,7 @@ function makeGraphs(error, projectsJson, statesJson) {
    var totalDonationsByTeacherPrefix = teacherPrefix.group().reduceSum(function (d) {
        return d["total_donations"];
    });
+
 
 
 
@@ -79,13 +85,12 @@ function makeGraphs(error, projectsJson, statesJson) {
    var totalDonationsND = dc.numberDisplay("#total-donations-nd");
    var fundingStatusChart = dc.pieChart("#funding-chart");
    var donationsByTeacherPrefixChart = dc.pieChart("#donations-by-teacher-prefix-chart");
-
+   var numDonorsChart = dc.barChart("#number-donors-chart");
 
 
    selectField = dc.selectMenu('#menu-select')
        .dimension(stateDim)
        .group(stateGroup);
-
 
    numberProjectsND
        .formatNumber(d3.format("d"))
@@ -114,6 +119,19 @@ function makeGraphs(error, projectsJson, statesJson) {
        .xAxisLabel("Year")
        .yAxis().ticks(4);
 
+    var minDonors = numDonorsDim.bottom(1)[0]["num_donors"];
+    var maxDonors = numDonorsDim.top(1)[0]["num_donors"];
+    numDonorsChart
+       .width(700)
+       .height(250)
+       // .margins({top: 10, right: 50, bottom: 30, left: 50})
+       .dimension(numDonorsDim)
+       .group(numDonors)
+       .transitionDuration(500)
+       .x(d3.scale.linear())
+       .elasticY(true)
+       .xAxisLabel("Donors")
+       .yAxis().ticks(4);
 
    resourceTypeChart
        .width(300)
