@@ -121,8 +121,9 @@ function makeGraphs(error, projectsJson, statesJson) {
 
     var minDonors = numDonorsDim.bottom(1)[0]["num_donors"];
     var maxDonors = numDonorsDim.top(1)[0]["num_donors"];
+
     numDonorsChart
-       .width(700)
+       .width(389)
        .height(250)
        // .margins({top: 10, right: 50, bottom: 30, left: 50})
        .dimension(numDonorsDim)
@@ -148,6 +149,7 @@ function makeGraphs(error, projectsJson, statesJson) {
        .xAxis().ticks(4);
 
    fundingStatusChart
+       .width(250)
        .height(250)
        .radius(90)
        .innerRadius(40)
@@ -179,7 +181,7 @@ function makeGraphs(error, projectsJson, statesJson) {
 
 
        donationsByTeacherPrefixChart
-           // .width(750)
+           .width(250)
            .height(250)
            .radius(90)
            .innerRadius(40)
