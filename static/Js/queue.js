@@ -1,3 +1,6 @@
+/**
+ * Created by Vishal on 28/11/2016.
+ */
 (function() {
   var slice = [].slice;
 

@@ -1,4 +1,4 @@
- queue()
+queue()
        .defer(d3.json, "/donorsUS/projects")
        .defer(d3.json, "/static/us-states.json")
        .await(makeGraphs);
@@ -161,7 +161,7 @@ function makeGraphs(error, projectsJson, statesJson) {
 
         var fundingStatusmap = dc.geoChoroplethChart("#funding-map");
 
-        fundingStatusmap.width(700)
+        fundingStatusmap.width(680)
             .height(340)
             .dimension(stateDim)
             .group(totalDonationsByState)
